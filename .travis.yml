@@ -15,6 +15,7 @@ after_success:
   - docker build -t frontier-sco/multi-server ./server
   - docker build -t frontier-sco/multi-worker ./worker
 
+
 # Login to the Docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
