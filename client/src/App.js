@@ -17,7 +17,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Pozdro ze Szkocji od Scona!
+            Learn React
           </a>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>
