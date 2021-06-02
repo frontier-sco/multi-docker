@@ -10,10 +10,10 @@ script:
   - docker run -e CI=true frontier-sco/react-test npm test
 
 after_success:
-  - docker build -t frontier-sco/multi-client ./client
-  - docker build -t frontier-sco/multi-nginx ./nginx
-  - docker build -t frontier-sco/multi-server ./server
-  - docker build -t frontier-sco/multi-worker ./worker
+  - docker build -t frontiersco/multi-client ./client
+  - docker build -t frontiersco/multi-nginx ./nginx
+  - docker build -t frontiersco/multi-server ./server
+  - docker build -t frontiersco/multi-worker ./worker
 
 
 # Login to the Docker CLI
