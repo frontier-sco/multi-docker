@@ -15,7 +15,6 @@ after_success:
   - docker build -t frontiersco/multi-server ./server
   - docker build -t frontiersco/multi-worker ./worker
 
-
 # Login to the Docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
@@ -25,3 +24,14 @@ after_success:
   - docker push frontiersco/multi-server
   - docker push frontiersco/multi-worker
 
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-2'
+  app: 'multi-docker'
+  env: 'Multidocker-env'
+  bucket_name: 'elasticbeanstalk-us-east-2-054306867602'
+  bucket_path: 'docker-multi'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
